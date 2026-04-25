@@ -115,6 +115,14 @@ html {
     text-transform: uppercase;
     margin: 0;
 }
+
+
+
+
+
+
+
+    /* services */
 .section-label {
     display: block;
     text-align: center;
@@ -140,16 +148,19 @@ html {
     border: 2px solid #ffffff;
     border-radius: 20px;
     padding: 40px;
-    transition: all 0.4s xease;
+    /* Διόρθωση στο typo 'xease' και προσθήκη transition */
+    transition: transform 0.4s ease; 
     text-align: center;
     width: 300px;
     height: 250px;
 }
+
 .service-box:hover {
     box-shadow: 0 0 25px #00d4ff, inset 0 0 10px rgba(0, 212, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
     border-color: #00d4ff;
-    transform: translateY(-5px);
+    /* Μόνο το ζούμ (scale) και το translateY που είχες */
+    transform: translateY(-5px) scale(1.05);
 }
 .service-box h3 {
     font-family: 'Michroma', sans-serif;
@@ -188,12 +199,14 @@ html {
 
 
 /* --- RELIAS CONTACT SECTION --- */
+/* --- RELIAS CONTACT SECTION (FIXED) --- */
 .relias-contact-section {
-    background-color: #01051e; /* Το βαθύ μπλε σου */
+    background-color: #01051e;
     padding: 100px 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box; /* Εξασφαλίζει ότι το padding δεν μεγαλώνει το section */
 }
 
 .relias-frame {
@@ -202,20 +215,20 @@ html {
     max-width: 800px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(0, 212, 255, 0.1);
-    padding: 60px;
+    padding: clamp(30px, 5vw, 60px); /* Δυναμικό padding για να χωράνε όλα */
     backdrop-filter: blur(10px);
+    box-sizing: border-box; /* ΚΡΑΤΑΕΙ ΤΑ ENTRIES ΜΕΣΑ ΣΤΟ ΠΛΑΙΣΙΟ */
 }
 
 .frame-title {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
     font-size: 2.7rem;
     letter-spacing: 5px;
     color: #fff;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
-/* Form Styles */
 .cyber-form {
     display: flex;
     flex-direction: column;
@@ -230,6 +243,7 @@ html {
 .cyber-form input, 
 .cyber-form textarea {
     width: 100%;
+    box-sizing: border-box; /* ΑΠΑΡΑΙΤΗΤΟ: εμποδίζει το overflow των entries */
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px 20px;
@@ -240,33 +254,40 @@ html {
     transition: 0.3s;
 }
 
-.cyber-form input::placeholder, 
-.cyber-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.3);
-    letter-spacing: 1px;
-}
-
 .cyber-form input:focus, 
 .cyber-form textarea:focus {
     border-color: #00d4ff;
     background: rgba(0, 212, 255, 0.05);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
 }
 
-/* Submit Button with Underscore Effect */
 .submit-btn {
     font-size: 1.0rem;
     background: #00d4ff;
     color: #01051e;
     border: none;
     padding: 20px;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
     font-weight: bold;
     letter-spacing: 3px;
     cursor: pointer;
     transition: 0.4s;
     margin-top: 20px;
-    position: relative;
+}
+
+/* RESPONSIVE ΔΙΟΡΘΩΣΗ ΓΙΑ ΤΑ ENTRIES ΣΤΟ ΚΙΝΗΤΟ */
+@media (max-width: 768px) {
+    .relias-contact-section {
+        padding: 60px 5%;
+    }
+    
+    .form-row {
+        flex-direction: column; /* Τα entries μπαίνουν το ένα κάτω από το άλλο για να μη βγαίνουν έξω */
+        gap: 15px;
+    }
+
+    .frame-title {
+        font-size: 1.8rem;
+    }
 }
 
 .submit-btn:hover {
@@ -513,5 +534,51 @@ html {
         margin-left: 5%;
         margin-top: 15%;
         align-items: flex-start;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    /* Διόρθωση για την κάρτα που ήταν πολύ δεξιά */
+    .cyber-card {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Διόρθωση για τον τίτλο */
+    .hero-title {
+        margin-left: 5% !important;
+        text-align: left;
+    }
+
+    .main-brand {
+        white-space: normal !important; /* Για να μην βγαίνει εκτός οθόνης το κείμενο */
+        font-size: clamp(2rem, 12vw, 3.5rem) !important;
+    }
+
+    /* Διόρθωση για τις υπηρεσίες */
+    .services-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .service-box {
+        width: 100% !important;
+        max-width: 320px !important;
+    }
+
+    /* Διόρθωση για τη φόρμα */
+    .form-row {
+        flex-direction: column !important;
+    }
+    
+    .relias-frame {
+        padding: 30px 15px !important;
     }
 }

@@ -50,6 +50,12 @@ def send_email():
                 <p>Thank you, {name}.</p>
                 <button onclick="window.close()">CLOSE TAB</button>
             </div>
+
+            @media (max-width: 768px) {
+                .success{
+                    height: 90vh;
+                }
+            }
         </body>
         </html>
         '''
