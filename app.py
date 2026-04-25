@@ -25,7 +25,7 @@ def send_email():
     msg['To'] = "nektarios.relias@gmail.com"
 
     MY_EMAIL = "nektarios.relias@gmail.com"
-    MY_PASSWORD ="siip cgfv sjav tshc" 
+     
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
