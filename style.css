@@ -542,12 +542,37 @@ html {
 
 
 @media (max-width: 768px) {
-    /* Διόρθωση για την κάρτα που ήταν πολύ δεξιά */
+    
     .cyber-card {
+        /* Την κεντράρουμε και της δίνουμε σωστό πλάτος */
         width: 90% !important;
-        max-width: 90% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        max-width: 450px !important; /* Περιορίζουμε το πλάτος για να μη δείχνει τεράστια */
+        margin: 40px auto !important; /* Κεντράρισμα παντού */
+        min-height: 250px !important; /* Λίγο πιο μικρή σε ύψος για κινητά */
+        left: 0 !important; /* Μηδενίζουμε τυχόν περίεργα left/margin-left */
+    }
+
+    .content {
+        padding: 30px 20px !important; /* Λιγότερο padding για να αναπνέει το κείμενο */
+    }
+
+    .title-top {
+        font-size: 0.9rem !important; /* Λίγο πιο μικρό sub-title */
+        letter-spacing: 4px !important; /* Λιγότερο κενό ανάμεσα στα γράμματα */
+        margin-bottom: 8px !important;
+    }
+
+    .title-bottom {
+        /* Χρησιμοποιούμε clamp για να αυξομειώνεται η γραμματοσειρά χωρίς να σπάει */
+        font-size: clamp(1.4rem, 7vw, 2rem) !important; 
+        line-height: 1.2 !important;
+        letter-spacing: 0px !important;
+    }
+    
+    /* Διόρθωση για το περιστρεφόμενο laser στο κινητό */
+    .cyber-card::before {
+        width: 200% !important;
+        height: 200% !important;
     }
 
     /* Διόρθωση για τον τίτλο */
