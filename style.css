@@ -199,14 +199,12 @@ html {
 
 
 /* --- RELIAS CONTACT SECTION --- */
-/* --- RELIAS CONTACT SECTION (FIXED) --- */
 .relias-contact-section {
     background-color: #01051e;
     padding: 100px 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box; /* Εξασφαλίζει ότι το padding δεν μεγαλώνει το section */
 }
 
 .relias-frame {
@@ -214,10 +212,10 @@ html {
     width: 100%;
     max-width: 800px;
     background: rgba(255, 255, 255, 0.02);
+    /* ΔΙΟΡΘΩΣΗ: Πολύ αχνό border για να μην κάνει "διπλή γραμμή" με τις γωνίες */
     border: 1px solid rgba(0, 212, 255, 0.1);
-    padding: clamp(30px, 5vw, 60px); /* Δυναμικό padding για να χωράνε όλα */
+    padding: 60px;
     backdrop-filter: blur(10px);
-    box-sizing: border-box; /* ΚΡΑΤΑΕΙ ΤΑ ENTRIES ΜΕΣΑ ΣΤΟ ΠΛΑΙΣΙΟ */
 }
 
 .frame-title {
@@ -225,10 +223,11 @@ html {
     font-size: 2.7rem;
     letter-spacing: 5px;
     color: #fff;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
+/* Form Styles */
 .cyber-form {
     display: flex;
     flex-direction: column;
@@ -240,10 +239,17 @@ html {
     gap: 20px;
 }
 
+/* Responsive για τα κινητά */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+}
+
 .cyber-form input, 
 .cyber-form textarea {
     width: 100%;
-    box-sizing: border-box; /* ΑΠΑΡΑΙΤΗΤΟ: εμποδίζει το overflow των entries */
+    box-sizing: border-box; /* Κρατάει τα inputs μέσα στο πλαίσιο */
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px 20px;
@@ -252,12 +258,6 @@ html {
     font-size: 0.9rem;
     outline: none;
     transition: 0.3s;
-}
-
-.cyber-form input:focus, 
-.cyber-form textarea:focus {
-    border-color: #00d4ff;
-    background: rgba(0, 212, 255, 0.05);
 }
 
 .submit-btn {
@@ -274,75 +274,51 @@ html {
     margin-top: 20px;
 }
 
-/* RESPONSIVE ΔΙΟΡΘΩΣΗ ΓΙΑ ΤΑ ENTRIES ΣΤΟ ΚΙΝΗΤΟ */
+.submit-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+/* ΟΙ ΓΩΝΙΕΣ - Εδώ είναι το εφέ που θέλεις */
+.corner {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #00d4ff; /* Έντονο χρώμα στις γωνίες */
+}
+
+.tl {
+    top: -1px; /* Το ευθυγραμμίζουμε ακριβώς πάνω στο border */
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.br {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .relias-contact-section {
         padding: 60px 5%;
     }
     
     .form-row {
-        flex-direction: column; /* Τα entries μπαίνουν το ένα κάτω από το άλλο για να μη βγαίνουν έξω */
+        flex-direction: column;
         gap: 15px;
     }
 
     .frame-title {
         font-size: 1.8rem;
+        letter-spacing: 5px;
     }
-}
 
-.submit-btn:hover {
-    background: #fff;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
-}
-
-/* Το εφέ με την κάτω παύλα που αναβοσβήνει στο κουμπί */
-.submit-btn::after {
-    
-    display: inline-block;
-    margin-left: 8px;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Decorative Corners */
-.corner {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #00d4ff;
-}
-
-.tl {
-    top: -2px;
-    left: -2px;
-    border-right: none;
-    border-bottom: none;
-}
-
-.br {
-    bottom: -2px;
-    right: -2px;
-    border-left: none;
-    border-top: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
     .relias-frame {
         padding: 40px 20px;
-    }
-    
-    .form-row {
-        flex-direction: column;
-    }
-    
-    .frame-title {
-        font-size: 1.4rem;
     }
 }
 
