@@ -1,0 +1,517 @@
+body {
+    font-size: 2rem;
+    font-size: clamp(2rem,0.7179487179487178rem + 5.47008547008547vw, 4rem);
+    background-color: rgb(5, 0, 27);
+    margin: 0%;
+    padding: 0%;
+    color: rgb(255, 255, 255);
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+#name {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Michroma', sans-serif;
+    color: rgb(255, 253, 253);
+    letter-spacing: 15px;
+}
+#line {
+    margin: 0 auto;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 13%;
+    margin-top: 8%;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.1;
+}
+.top-text {
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.9rem);
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+.main-brand {
+    font-weight: 900;
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    letter-spacing: -2px;
+    color: #ffffff;
+    white-space: nowrap;
+    display: block;
+}
+.cyber-card {
+    width: 40%;
+    max-width: 55%;
+    min-height: 90%;
+    background-color: #01051e;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    margin-top: 8;
+    margin-left: 55%;
+}
+.cyber-card::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: conic-gradient(#00d4ff, transparent, transparent, #00d4ff);
+    animation: rotateLaser 4s linear infinite;
+}
+.cyber-card::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #01051e;
+    border-radius: 12px;
+}
+.content {
+    z-index: 1;
+    width: 100%;
+    padding: 40px;
+}
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+.title-top {
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.title-bottom {
+    font-weight: 900;
+    font-size: 3.5vw;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+}
+.section-label {
+    display: block;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+.services-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+.service-box {
+    background: rgba(1, 5, 30, 0.6);
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.4s xease;
+    text-align: center;
+    width: 300px;
+    height: 250px;
+}
+.service-box:hover {
+    box-shadow: 0 0 25px #00d4ff, inset 0 0 10px rgba(0, 212, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #00d4ff;
+    transform: translateY(-5px);
+}
+.service-box h3 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 1.1rem;
+    margin: 15px 0;
+    color: #fff;
+}
+.service-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+.tech-tags {
+    display: none;
+}
+.icon {
+    margin-top: 15%;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- RELIAS CONTACT SECTION --- */
+.relias-contact-section {
+    background-color: #01051e; /* Το βαθύ μπλε σου */
+    padding: 100px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.relias-frame {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    padding: 60px;
+    backdrop-filter: blur(10px);
+}
+
+.frame-title {
+    font-family: 'Inter', sans-serif;;
+    font-size: 2.7rem;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+/* Form Styles */
+.cyber-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.cyber-form input, 
+.cyber-form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.cyber-form input::placeholder, 
+.cyber-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
+}
+
+.cyber-form input:focus, 
+.cyber-form textarea:focus {
+    border-color: #00d4ff;
+    background: rgba(0, 212, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+/* Submit Button with Underscore Effect */
+.submit-btn {
+    font-size: 1.0rem;
+    background: #00d4ff;
+    color: #01051e;
+    border: none;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;;
+    font-weight: bold;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 20px;
+    position: relative;
+}
+
+.submit-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+/* Το εφέ με την κάτω παύλα που αναβοσβήνει στο κουμπί */
+.submit-btn::after {
+    
+    display: inline-block;
+    margin-left: 8px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Decorative Corners */
+.corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00d4ff;
+}
+
+.tl {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.br {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .relias-frame {
+        padding: 40px 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .frame-title {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- FOOTER STYLES --- */
+/* --- FOOTER STYLES --- */
+.main-footer {
+    background-color: #01051e;
+    padding: 80px 10% 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Αυτή είναι η γραμμή στο ΠΑΝΩ μέρος του footer */
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+/* Brand Section */
+.footer-logo {
+    font-family: 'Michroma', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    margin: 0;
+    margin-top: 10%;
+    line-height: 1;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+
+.link-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: right;
+}
+
+.link-group a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-group a:hover {
+    color: #00d4ff;
+    transform: translateX(-10px);
+}
+
+
+.footer-bottom {
+    padding-top: 20px; 
+    border-top: none;  
+    text-align: right; 
+}
+
+.footer-bottom span {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.4;
+    text-transform: uppercase;
+}
+
+/* --- ΔΙΟΡΘΩΜΕΝΟ RESPONSIVE ΓΙΑ ΚΙΝΗΤΑ --- */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 60px 5% 30px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-logo {
+        margin-top: 0; /* Σημαντικό για το κινητό */
+        font-size: 1.8rem;
+        letter-spacing: 8px;
+    }
+
+    .footer-tagline {
+        margin-top: 8px;
+        font-size: 0.8rem;
+    }
+
+    .link-group {
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .link-group a {
+        font-size: 1.3rem;
+        transform: none !important;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: none; /* Σιγουρευόμαστε ότι λείπει και στο κινητό */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero-title {
+    animation: fadeInUp 1s ease-out forwards;
+}
+@keyframes rotateLaser {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@media (max-width: 768px) {
+    .hero-title {
+        margin-left: 5%;
+        margin-top: 15%;
+        align-items: flex-start;
+    }
+}
