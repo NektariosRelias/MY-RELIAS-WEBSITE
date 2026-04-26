@@ -519,6 +519,7 @@ html {
 
 @media (max-width: 768px) {
     
+    
     .cyber-card {
         /* Την κεντράρουμε και της δίνουμε σωστό πλάτος */
         width: 90% !important;
@@ -579,7 +580,7 @@ html {
     /* Διόρθωση για τον τίτλο */
     .hero-title {
         margin-left: 5% !important;
-        text-align: left;
+        text-align: center;
     }
 
     .main-brand {
