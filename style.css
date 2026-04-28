@@ -609,3 +609,31 @@ html {
         padding: 30px 15px !important;
     }
 }
+
+
+
+
+/* --- ΔΙΟΡΘΩΣΗ ΓΙΑ LANDSCAPE: ΤΟ ΕΝΑ ΚΑΤΩ ΑΠΟ ΤΟ ΑΛΛΟ --- */
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+    
+    .services-grid {
+        display: flex !important;
+        flex-direction: column !important; /* Τα βάζει σε σειρά, το ένα κάτω από το άλλο */
+        align-items: center !important;
+        gap: 30px !important; /* Απόσταση μεταξύ των κουτιών για να μην κολλάνε */
+    }
+
+    .service-box {
+        /* Εδώ είναι το "κλειδί": βγάζουμε το σταθερό ύψος */
+        height: auto !important; 
+        min-height: 200px !important; /* Δίνουμε ένα ελάχιστο ύψος που χωράει σίγουρα */
+        width: 90% !important;
+        max-width: 400px !important;
+        padding: 30px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .icon {
+        margin-top: 5% !important;
+    }
+}
